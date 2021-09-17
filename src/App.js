@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Switch, Route, Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+
+import Graphs from './components/Graphs';
+import StatsList from './components/Stats';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+    <div>
+      <nav className="navbar navbar-expand navbar-dark bg-dark">
+        <a href="/" className="navbar-brand">
+          Harry Bradshaw
         </a>
-      </header>
+        <div className="navbar-nav mr-auto">
+        <li className="nav-item">
+            <Link to={"/graphs"} className="nav-link">
+              Graphs
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to={"/stats"} className="nav-link">
+              Stats
+            </Link>
+            </li>
+            
+        </div>
+      </nav>
+
+      <div className="container mt-3">
+        <Switch>
+          <Route exact path={["/stats"]} component={StatsList} />
+          <Route exact path={["/","/graphs"]} component={Graphs} />
+        </Switch>
+      </div>
     </div>
   );
 }
