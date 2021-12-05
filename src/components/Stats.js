@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import StatsService from "../services/StatsService";
-import { Link } from "react-router-dom";
-import Graph from "./Graphs";
 
 const AllStatsList = () => {
     const [stats, setStats] = useState([]);

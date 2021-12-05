@@ -20,7 +20,7 @@ const getAll = (region='England') => {
     } else if (region==='Manchester') {
         AreaType = 'utla';
         AreaName = 'Manchester';
-    };
+    }
 
     const filters = [
         `areaType=${ AreaType }`,
@@ -37,7 +37,7 @@ const getAll = (region='England') => {
             cumCases: "cumCasesBySpecimenDate",
             
         };
-    };
+    }
 
     const apiParams = {
         filters: filters.join(";"),
